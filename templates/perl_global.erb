@@ -1,0 +1,6 @@
+<% if @disable_perl then -%>
+disablePerl true
+<% end -%>
+<% if !@perl_init_file.empty? then -%>
+perlInitFile <%= @perl_init_file %>
+<% end -%>

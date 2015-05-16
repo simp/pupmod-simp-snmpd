@@ -1,0 +1,20 @@
+<%
+# First, the master case
+if !has_variable?('agentx_ping_interval') then
+
+    if @enable then
+-%>
+master agentx
+<%  end -%>
+<% 
+# Now, the sub-agents
+else
+-%>
+agentXPingInterval <%= @agentx_ping_interval %>
+<% end -%>
+<% if !@agentx_timeout.empty? then -%>
+agentXTimeout <%= @agentx_timeout %>
+<% end -%>
+<% if !@agentx_retries.empty? then -%>
+agentXRetries <%= @agentx_retries %>
+<% end -%>

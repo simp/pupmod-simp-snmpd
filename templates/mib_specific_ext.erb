@@ -1,0 +1,10 @@
+<%
+lstr = ext_type
+
+if !@priority.empty? then
+    lstr = "#{lstr} -p #{@priority}"
+end
+
+lstr = "#{lstr} #{@miboid} #{@prog}"
+-%>
+<%= lstr %>

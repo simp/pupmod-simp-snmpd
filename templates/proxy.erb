@@ -1,0 +1,18 @@
+<%
+lstr = "proxy"
+
+if !@context_name.empty? then
+    lstr = "#{lstr} -Cn #{@context_name}"
+end
+
+if !@snmpcmd_args.empty? then
+    lstr = "#{lstr} #{@snmpcmd_args}"
+end
+
+lstr = "#{lstr} #{@host} #{@oid}"
+
+if !@remote_oid.empty? then
+    lstr = "#{lstr} #{@remote_oid}"
+end
+-%>
+<%= lstr %>

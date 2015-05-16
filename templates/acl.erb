@@ -1,0 +1,39 @@
+<% 
+largs = ""
+# Do useracl first
+if !has_variable?('community') then
+
+    if not @ro then
+        largs = "rwuser"
+    else
+        largs = "rouser"
+    end
+
+    largs = "#{largs} #{@user} #{@sec_lvl}"
+
+# Now communityacl
+else
+
+    if not @ro then
+        largs = "rwcommunity"
+    else
+        largs = "rocommunity"
+    end
+
+    if @ipv6 then
+        largs += "6"
+    end
+
+    largs = "#{largs} #{@community}"
+
+    if not @source.empty? then
+        largs = "#{largs} #{@source}"
+    end
+
+end
+
+if not @oid.empty? then
+    largs = "#{largs} #{@oid}"
+end
+-%>
+<%= largs %>

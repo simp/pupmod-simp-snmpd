@@ -1,0 +1,36 @@
+<%
+lstr = ""
+if has_variable?('community') then
+    lstr = 'authcommunity'
+    ltype = community
+elsif has_variable?('user') then
+    lstr = 'authuser'
+    ltype = user
+else
+    lstr = 'authgroup'
+    ltype = group
+end
+
+lstr = "#{lstr} #{types}"
+
+if has_variable?('model') && !model.empty? then
+    lstr = "#{lstr} -s #{model}"
+end
+
+lstr = "#{lstr} #{ltype}" 
+
+if has_variable?('source') && !source.empty? then
+    lstr = "#{lstr} #{source}"
+elsif has_variable?('level') && !level.empty? then
+    lstr = "#{lstr} #{level}"
+end
+
+if !oid.empty? then
+    lstr = "#{lstr} #{oid}"
+end
+
+if !view.empty? then
+    lstr = "#{lstr} -V #{view}"
+end
+-%>
+<%= lstr %>

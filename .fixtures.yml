@@ -1,0 +1,11 @@
+---
+fixtures:
+  symlinks:
+    snmpd: "#{source_dir}"
+    common: "#{source_dir}/../common"
+    concat: "#{source_dir}/../concat"
+    functions: "#{source_dir}/../functions"
+    iptables: "#{source_dir}/../iptables"
+    rsync: "#{source_dir}/../rsync"
+    stdlib: "#{source_dir}/../stdlib"
+    tcpwrappers: "#{source_dir}/../tcpwrappers"

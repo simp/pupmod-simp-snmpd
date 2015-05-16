@@ -1,0 +1,18 @@
+<%
+lstr = "com2sec"
+lsource = @source
+
+if @ipv6 then
+    lstr = "com2sec6"
+elsif not @sockpath.empty? then
+    lstr = "com2secunix"
+    lsource = @sockpath   
+end
+
+if not @context.empty? then
+    lstr = "#{lstr} -Cn #{@context}"
+end
+
+lstr = "#{lstr} #{@secname} #{lsource} #{@community}"
+-%>
+<%= lstr %>

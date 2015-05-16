@@ -1,0 +1,19 @@
+<%
+lstr = ""
+if @addr_type.eql?('agentX') then
+    lstr = "agentXSocket #{@transport_specifier}"
+else
+    lstr = "agentaddress #{@transport_specifier}"
+end
+
+if !@transport_address.eql?('any') then
+    lstr = "#{lstr}:#{@transport_address}"
+else
+    lstr = "#{lstr}:0.0.0.0"
+end
+
+if !@transport_port.empty? then
+    lstr = "#{lstr}:#{@transport_port}"
+end
+-%>
+<%= lstr -%>

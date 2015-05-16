@@ -1,0 +1,12 @@
+<%
+lstr = "proc #{@name}"
+
+if !@max.empty? then
+    lstr = "#{lstr} #{@max}"
+
+    if !@min.empty? then
+        lstr = "#{lstr} #{@min}"
+    end
+end
+-%>
+<%= lstr %>

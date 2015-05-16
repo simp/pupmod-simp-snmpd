@@ -1,0 +1,153 @@
+# Client Options
+<% if !@default_port.empty? then -%>
+defaultPort <%= @default_port %>
+<% end -%>
+defVersion <%= @def_version %>
+defCommunity <%= @def_community %>
+<% if @dump_packet then -%>
+dumpPacket yes
+<% end -%>
+<% if @do_debugging then -%>
+doDebugging 1
+<% end -%>
+<% if !@debug_tokens.to_s.empty? then -%>
+debugTokens <%= @debug_tokens.join(',') %>
+<% end -%>
+<% if @sixteen_bit_ids then -%>
+16bitIDs yes
+<% end -%>
+<% if !@clientaddr.empty? then -%>
+clientaddr <%= @clientaddr %>
+<% end -%>
+<% if !@client_recv_buf.empty? then -%>
+clientRecvBuf <%= @client_recv_buf %>
+<% end -%>
+<% if !@client_send_buf.empty? then -%>
+clientSendBuf <%= @client_send_buf %>
+<% end -%>
+<% if @no_range_check then -%>
+noRangeCheck yes
+<% end -%>
+<% if @no_token_warnings then -%>
+noTokenWarnings
+<% end -%>
+<% if !@reverse_encode_BER.empty? then -%>
+reverseEncodeBER <%= @reverse_encode_BER %>
+<% end -%>
+<% if !@def_security_name.empty? then -%>
+defSecurityName <%= @def_security_name %>
+<% end -%>
+defSecurityLevel <%= @def_security_level %>
+<% if !@def_passphrase.empty? then -%>
+defPassphrase <%= @def_passphrase %>
+<% end -%>
+<% if !@def_auth_passphrase.empty? then -%>
+defAuthPassphrase <%= @def_auth_passphrase %>
+<% end -%>
+<% if !@def_priv_passphrase.empty? then -%>
+defPrivPassphrase <%= @def_priv_passphrase %>
+<% end -%>
+defAuthType <%= @def_auth_type %>
+defPrivType <%= @def_priv_type %>
+<% if !@def_context.empty? then -%>
+defContext <%= @def_context %>
+<% end -%>
+<% if !@def_security_model.empty? then -%>
+defSecurityModel <%= @def_security_model %>
+<% end -%>
+<% if !@def_auth_master_key.empty? then -%>
+defAuthMasterKey <%= @def_auth_master_key %>
+<% end -%>
+<% if !@def_auth_localized_key.empty? then -%>
+defAuthLocalizedKey <%= @def_auth_localized_key %>
+<% end -%>
+<% if !@def_priv_master_key.empty? then -%>
+defPrivMasterKey <%= @def_priv_master_key %>
+<% end -%>
+<% if !@def_priv_localized_key.empty? then -%>
+defPrivLocalizedKey <%= @def_priv_localized_key %>
+<% end -%>
+<% 
+lmibdirs = [ '/usr/share/snmp/mibs' ]
+lmibdirs += @mibdirs
+lmibdirs.delete('')
+lmibdirs.push('/usr/local/share/snmp/mibs')
+-%>
+mibdirs <%= lmibdirs.join(':') %>
+mibs <%= @mibs.join(':') %>
+<% if @show_mib_errors then -%>
+showMibErrors yes
+<% end -%>
+<% if !@strict_comment_term.empty? then -%>
+strictCommentTerm <%= @strict_comment_term %>
+<% end -%>
+<% if !@mib_allow_underline then -%>
+mibAllowUnderline no
+<% end -%>
+<% if !@mib_warning_level.empty? then -%>
+mibWarningLevel <%= @mib_warning_level %>
+<% end -%>
+<% if @log_timestamp then -%>
+logTimestamp yes
+<% end -%>
+<% if @print_numeric_enums then -%>
+printNumericEnums yes
+<% end -%>
+<% if @print_numeric_oids then -%>
+printNumericOids yes
+<% end -%>
+<% if @dont_breakdown_oids then -%>
+dontBreakdownOids yes
+<% end -%>
+<% if @escape_quotes then -%>
+escapeQuotes yes
+<% end -%>
+<% if @quick_printing then -%>
+quickPrinting yes
+<% end -%>
+<% if @print_value_only then -%>
+printValueOnly yes
+<% end -%>
+<% if @dont_print_units then -%>
+dontPrintUnits yes
+<% end -%>
+<% if @numeric_timeticks then -%>
+numericTimeticks yes
+<% end -%>
+<% if @print_hex_text then -%>
+printHexText yes
+<% end -%>
+<% if !@hex_output_length.empty? then -%>
+hexOutputLength <%= @hex_output_length %>
+<% end -%>
+<% if !@suffix_printing.empty? then -%>
+suffixPrinting <%= @suffix_printing %>
+<% end -%>
+<% if !@oid_output_format.empty? then -%>
+oidOutputFormat <%= @oid_output_format %>
+<% end -%>
+<% if @extended_index then -%>
+extendedIndex yes
+<% end -%>
+<% if @no_display_hint then -%>
+noDisplayHint yes
+<% end -%>
+# Server Options
+<% if !@persistent_dir.empty? then -%>
+persistentDir <%= @persistent_dir %>
+<% end -%>
+<% if @no_persistent_load then -%>
+noPersistentLoad yes
+<% end -%>
+<% if @no_persistent_save then -%>
+noPersistentSave yes
+<% end -%>
+<% if !@temp_file_pattern.empty? then -%>
+tempFilePattern <%= @temp_file_pattern %>
+<% end -%>
+<% if !@server_recv_buf.empty? then -%>
+serverRecvBuf <%= @server_recv_buf %>
+<% end -%>
+<% if !@server_send_buf.empty? then -%>
+serverSendBuf <%= @server_send_buf %>
+<% end -%>

@@ -1,0 +1,18 @@
+<%
+lstr = "authaccess #{@types}"
+
+if !@model.empty? then
+    lstr = "#{lstr} #{@model}"
+end
+
+lstr = "#{lstr} #{@group} #{@view}"
+
+if !@level.empty? then
+    lstr = "#{lstr} #{@level}"
+
+    if !@context.empty? then
+        lstr = "#{lstr} #{@context}"
+    end
+end
+-%>
+<%= lstr %>

@@ -1,0 +1,16 @@
+<%
+lstr = "agentXPerms #{@sockperms}"
+
+if !@dirperms.empty? then
+    lstr += " #{@dirperms}"
+end
+
+if !@user.empty? then
+    lstr += " #{@user}"
+
+    if !@group.empty? then
+        lstr += " #{@group}"
+    end
+end
+-%>
+<%= lstr %>

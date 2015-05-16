@@ -1,0 +1,10 @@
+<%
+lstr = "disk #{@disk_path}"
+
+if !@minspace.empty? then
+    lstr = "#{lstr} #{@minspace}"
+elsif !@minpercent.empty? then
+    lstr = "#{lstr} #{@minpercent}%"
+end
+-%>
+<%= lstr %> 

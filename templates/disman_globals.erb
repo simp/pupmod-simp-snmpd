@@ -1,0 +1,15 @@
+<% if !@iquery_sec_name.empty? then -%>
+iquerySecName <%= @iquery_sec_name %>
+<% end -%>
+<% if !@agent_sec_name.empty? then -%>
+agentSecName <%= @agent_sec_name %>
+<% end %>
+<% if @strict_disman then -%>
+strictDisman yes
+<% end -%>
+<% if !@link_up_down_notifications.empty? then -%>
+linkUpDownNotifications yes
+<% end -%>
+<% if !@default_monitors.empty? then -%>
+defaultMonitors yes
+<% end -%>
