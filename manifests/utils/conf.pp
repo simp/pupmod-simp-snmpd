@@ -124,11 +124,11 @@ class snmpd::utils::conf (
   include 'snmpd'
 
   file { '/etc/snmp/snmp.conf':
-    owner    => 'root',
-    group    => 'root',
-    mode     => '0640',
-    content  => template('snmpd/snmp.conf.erb'),
-    notify   => Exec['set_snmp_perms']
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0640',
+    content => template('snmpd/snmp.conf.erb'),
+    notify  => Exec['set_snmp_perms']
   }
 
   validate_array($debug_tokens)

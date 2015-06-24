@@ -90,23 +90,23 @@ class snmpd (
   }
 
   file { '/etc/snmp/snmpd.conf':
-    owner    => 'root',
-    group    => 'root',
-    mode     => '0640',
-    notify   => [ Service['snmpd'], Exec['set_snmp_perms'] ],
-    audit    => content,
-    require  => [
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0640',
+    notify  => [ Service['snmpd'], Exec['set_snmp_perms'] ],
+    audit   => content,
+    require => [
       Package['net-snmp'],
       Package['net-snmp-libs']
     ]
   }
 
   file { '/etc/snmp/snmpd.local.conf':
-    owner    => 'root',
-    group    => 'root',
-    mode     => '0640',
-    notify   => [ Service['snmpd'], Exec['set_snmp_perms'] ],
-    require  => [
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0640',
+    notify  => [ Service['snmpd'], Exec['set_snmp_perms'] ],
+    require => [
       Package['net-snmp'],
       Package['net-snmp-libs']
     ]
