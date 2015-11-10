@@ -1,0 +1,45 @@
+{
+  "name":    "simp-snmpd",
+  "version": "4.1.0",
+  "author":  "simp",
+  "summary": "Manages SNMPD",
+  "license": "Apache-2.0",
+  "source":  "https://github.com/simp/pupmod-simp-snmpd",
+  "project_page": "https://github.com/simp/pupmod-simp-snmpd",
+  "issues_url":   "https://simp-project.atlassian.net",
+  "tags": [ "simp", "snmp", "snmpd" ],
+  "dependencies": [
+    {
+      "name": "simp-common",
+      "version_requirement": ">= 4.2.0"
+    },
+    {
+      "name": "simp-rsync",
+      "version_requirement": ">= 2.0.0"
+    },
+    {
+      "name": "simp-simpcat",
+      "version_requirement": ">= 4.0.0"
+    },
+    {
+      "name": "simp-simplib",
+      "version_requirement": ">= 1.0.0"
+    }
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
+    }
+  ]
+}

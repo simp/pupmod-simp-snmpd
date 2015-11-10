@@ -35,6 +35,10 @@ class snmpd (
   include 'functions'
 
 
+  validate_bool($dont_log_tcp_wrappers_connects)
+  validate_integer($agentgid)
+  validate_integer($agentuid)
+
   $l_fragdir = fragmentdir('snmpd')
   $l_outdir = concat_output('snmpd')
 
@@ -179,8 +183,4 @@ class snmpd (
       notify     => Service['snmpd']
     }
   }
-
-  validate_bool($dont_log_tcp_wrappers_connects)
-  validate_integer($agentgid)
-  validate_integer($agentuid)
 }
