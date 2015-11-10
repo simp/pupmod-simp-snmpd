@@ -2,16 +2,20 @@ require 'spec_helper'
 
 describe 'snmpd::disman::monitor' do
 
-  let(:title) {'test_monitor'}
-  let(:params) {{
-    :expression => 'test_expression'
-  }}
-  base_facts = {
-    :interfaces => 'eth0'
-  }
-  let(:facts){base_facts}
+  on_supported_os.each do |os, base_facts|
+    let(:facts) do
+      base_facts.merge({ :interfaces => 'eth0' })
+    end
 
-  it { should compile.with_all_deps }
-  it { should contain_class('snmpd') }
-  it { should create_concat_fragment('snmpd+disman.test_monitor.monitor') }
+    context "on #{os}" do
+      let(:title) {'test_monitor'}
+      let(:params) {{
+        :expression => 'test_expression'
+      }}
+
+      it { should compile.with_all_deps }
+      it { should contain_class('snmpd') }
+      it { should create_concat_fragment('snmpd+disman.test_monitor.monitor') }
+    end
+  end
 end

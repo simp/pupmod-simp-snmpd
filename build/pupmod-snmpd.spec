@@ -1,13 +1,14 @@
 Summary: SNMP Puppet Module
 Name: pupmod-snmpd
 Version: 4.1.0
-Release: 3
+Release: 4
 License: Apache License, Version 2.0
 Group: Applications/System
 Source: %{name}-%{version}-%{release}.tar.gz
 Buildroot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires: pupmod-common >= 2.1.2-2
-Requires: pupmod-concat >= 2.0.0-0
+Requires: pupmod-simplib >= 1.0.0-0
+Requires: pupmod-simpcat >= 2.0.0-0
 Requires: pupmod-functions >= 2.0.0-0
 Requires: pupmod-rsync >= 2.0.0-0
 Requires: puppet >= 3.3.0
@@ -63,6 +64,9 @@ fi
 # Post uninstall stuff
 
 %changelog
+* Mon Nov 09 2015 Chris Tessmer <chris.tessmer@onypoint.com> - 4.1.0-4
+- migration to simplib and simpcat (lib/ only)
+
 * Fri Jan 16 2015 Trevor Vaughan <tvaughan@onyxpoint.com> - 4.1.0-3
 - Changed puppet-server requirement to puppet
 
