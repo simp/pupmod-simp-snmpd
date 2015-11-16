@@ -6,10 +6,8 @@ License: Apache License, Version 2.0
 Group: Applications/System
 Source: %{name}-%{version}-%{release}.tar.gz
 Buildroot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Requires: pupmod-common >= 2.1.2-2
 Requires: pupmod-simplib >= 1.0.0-0
 Requires: pupmod-simpcat >= 2.0.0-0
-Requires: pupmod-functions >= 2.0.0-0
 Requires: pupmod-rsync >= 2.0.0-0
 Requires: puppet >= 3.3.0
 Requires: puppetlabs-stdlib
@@ -21,7 +19,7 @@ Provides: pupmod-snmp
 Obsoletes: pupmod-snmp
 Obsoletes: pupmod-snmpd-test
 
-Prefix:"/etc/puppet/environments/simp/modules"
+Prefix: %{_sysconfdir}/puppet/environments/simp/modules
 
 %description
 This module provides fully templated net-snmp functionality.
@@ -51,14 +49,10 @@ mkdir -p %{buildroot}/%{prefix}/snmpd
 
 %files
 %defattr(0640,root,puppet,0750)
-/etc/puppet/environments/simp/modules/snmpd
+%{prefix}/snmpd
 
 %post
 #!/bin/sh
-
-if [ -d /etc/puppet/environments/simp/modules/snmpd/plugins ]; then
-  /bin/mv /etc/puppet/environments/simp/modules/snmpd/plugins /etc/puppet/environments/simp/modules/snmpd/plugins.bak
-fi
 
 %postun
 # Post uninstall stuff

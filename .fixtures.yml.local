@@ -2,10 +2,8 @@
 fixtures:
   symlinks:
     snmpd: "#{source_dir}"
-    common: "#{source_dir}/../common"
     simplib: "#{source_dir}/../simplib"
     simpcat: "#{source_dir}/../simpcat"
-    functions: "#{source_dir}/../functions"
     iptables: "#{source_dir}/../iptables"
     rsync: "#{source_dir}/../rsync"
     stdlib: "#{source_dir}/../stdlib"

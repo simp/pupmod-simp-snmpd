@@ -32,7 +32,6 @@ class snmpd (
   include 'rsync'
   include 'tcpwrappers'
   include 'snmpd::utils'
-  include 'functions'
 
 
   validate_bool($dont_log_tcp_wrappers_connects)
