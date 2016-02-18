@@ -21,6 +21,6 @@ define snmpd::dlmod (
   include 'snmpd'
 
   concat_fragment { "snmpd+${name}.module":
-    content => "dlmod $name $path\n",
+    content => "dlmod ${name} ${path}\n",
   }
 }

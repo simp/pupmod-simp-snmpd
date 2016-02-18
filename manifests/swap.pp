@@ -16,7 +16,7 @@ class snmpd::swap (
   $min
 ) {
   concat_fragment { 'snmpd+swap.load':
-    content => "swap $min\n"
+    content => "swap ${min}\n"
   }
 
   validate_integer($min)

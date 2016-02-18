@@ -13,9 +13,9 @@ describe 'snmpd::proxy' do
         :oid  => '1234567890'
       }}
 
-      it { should compile.with_all_deps }
-      it { should contain_class('snmpd') }
-      it { should create_concat_fragment('snmpd+test_proxy.proxy') }
+      it { is_expected.to compile.with_all_deps }
+      it { is_expected.to contain_class('snmpd') }
+      it { is_expected.to create_concat_fragment('snmpd+test_proxy.proxy') }
     end
   end
 end

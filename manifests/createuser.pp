@@ -30,11 +30,11 @@ define snmpd::createuser (
 
   if empty($engine_id) {
     $lcontent =
-      "createUser $name $auth_type $auth_phrase $priv_type $priv_phrase\n"
+      "createUser ${name} ${auth_type} ${auth_phrase} ${priv_type} ${priv_phrase}\n"
   }
   else {
     $lcontent =
-      "createUser -e $engine_id $name $auth_type $auth_phrase $priv_type $priv_phrase\n"
+      "createUser -e ${engine_id} ${name} ${auth_type} ${auth_phrase} ${priv_type} ${priv_phrase}\n"
   }
 
   concat_fragment { "snmpd+${name}.user":

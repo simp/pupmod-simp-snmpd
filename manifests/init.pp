@@ -86,7 +86,7 @@ class snmpd (
 
   concat_build { 'snmpd_agentaddress':
     clean_whitespace => 'all',
-    target           => "$l_fragdir/agentaddress.all",
+    target           => "${l_fragdir}/agentaddress.all",
     parent_build     => 'snmpd',
     file_delimiter   => ',',
     quiet            => true

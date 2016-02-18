@@ -13,9 +13,9 @@ describe 'snmpd::vacm::com2sec' do
         :community => 'test_community'
       }}
 
-      it { should compile.with_all_deps }
-      it { should contain_class('snmpd') }
-      it { should create_concat_fragment('snmpd+test_com2sec.com2sec') }
+      it { is_expected.to compile.with_all_deps }
+      it { is_expected.to contain_class('snmpd') }
+      it { is_expected.to create_concat_fragment('snmpd+test_com2sec.com2sec') }
     end
   end
 end

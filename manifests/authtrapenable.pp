@@ -13,6 +13,7 @@
 class snmpd::authtrapenable (
   $enable = false
 ) {
+  validate_bool($enable)
 
   $l_enable = $enable ? {
     true    => '1',
@@ -20,8 +21,6 @@ class snmpd::authtrapenable (
   }
 
   concat_fragment { 'snmpd+all.authtrapenable':
-    content => "authtrapenable $l_enable\n"
+    content => "authtrapenable ${l_enable}\n"
   }
-
-  validate_bool($enable)
 }

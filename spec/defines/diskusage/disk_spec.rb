@@ -12,9 +12,9 @@ describe 'snmpd::diskusage::disk' do
         :disk_path => '/test/disk/path'
       }}
 
-      it { should compile.with_all_deps }
-      it { should contain_class('snmpd') }
-      it { should create_concat_fragment('snmpd+test_disk.disks') }
+      it { is_expected.to compile.with_all_deps }
+      it { is_expected.to contain_class('snmpd') }
+      it { is_expected.to create_concat_fragment('snmpd+test_disk.disks') }
     end
   end
 end

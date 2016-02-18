@@ -18,6 +18,6 @@ define snmpd::smux::smuxpeer (
   include 'snmpd'
 
   concat_fragment { "snmpd+peer.${name}.smux":
-    content => "smuxpeer $oid $pass\n"
+    content => "smuxpeer ${oid} ${pass}\n"
   }
 }

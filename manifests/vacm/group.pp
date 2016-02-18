@@ -29,7 +29,7 @@ define snmpd::vacm::group (
   include 'snmpd'
 
   concat_fragment { "snmpd+${name}.group":
-    content => "group $group $sec_model $secname\n",
+    content => "group ${group} ${sec_model} ${secname}\n",
   }
 
   validate_array_member($sec_model, [

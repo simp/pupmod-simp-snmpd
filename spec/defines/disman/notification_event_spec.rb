@@ -12,9 +12,9 @@ describe 'snmpd::disman::notification_event' do
         :notification => 'Test Notification'
       }}
 
-      it { should compile.with_all_deps }
-      it { should contain_class('snmpd') }
-      it { should create_concat_fragment('snmpd+disman.test_notification_event.ne') }
+      it { is_expected.to compile.with_all_deps }
+      it { is_expected.to contain_class('snmpd') }
+      it { is_expected.to create_concat_fragment('snmpd+disman.test_notification_event.ne') }
     end
   end
 end

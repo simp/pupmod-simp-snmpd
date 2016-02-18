@@ -8,9 +8,9 @@ describe 'snmpd::agentx::master::conf' do
 
     context "on #{os}" do
       describe 'with default parameters' do
-        it { should create_class('snmpd::agentx::master::conf') }
-        it { should compile.with_all_deps }
-        it { should create_concat_fragment('snmpd+master.global.agentX') }
+        it { is_expected.to create_class('snmpd::agentx::master::conf') }
+        it { is_expected.to compile.with_all_deps }
+        it { is_expected.to create_concat_fragment('snmpd+master.global.agentX') }
       end
     end
   end

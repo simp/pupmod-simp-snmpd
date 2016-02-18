@@ -8,17 +8,17 @@ describe 'snmpd::utils' do
 
     context "on #{os}" do
       describe 'with default parameters' do
-        it { should create_class('snmpd::utils') }
-        it { should compile.with_all_deps }
-        it { should contain_class('rsync') }
-        it { should contain_package('net-snmp-utils') }
-        it { should contain_exec('set_snmp_perms') }
-        it { should create_file('/etc/snmp/snmp.local.conf').with({
+        it { is_expected.to create_class('snmpd::utils') }
+        it { is_expected.to compile.with_all_deps }
+        it { is_expected.to contain_class('rsync') }
+        it { is_expected.to contain_package('net-snmp-utils') }
+        it { is_expected.to contain_exec('set_snmp_perms') }
+        it { is_expected.to create_file('/etc/snmp/snmp.local.conf').with({
             :notify  => 'Exec[set_snmp_perms]',
             :require => 'Package[net-snmp-utils]'
           })
         }
-        it { should create_file('/usr/local/share/snmp').with({
+        it { is_expected.to create_file('/usr/local/share/snmp').with({
             :ensure  => 'directory',
             :require => 'Package[net-snmp-utils]'
           })

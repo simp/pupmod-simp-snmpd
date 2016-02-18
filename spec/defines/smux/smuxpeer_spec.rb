@@ -13,9 +13,9 @@ describe 'snmpd::smux::smuxpeer' do
         :pass => 'test_pass'
       }}
 
-      it { should compile.with_all_deps }
-      it { should contain_class('snmpd') }
-      it { should create_concat_fragment('snmpd+peer.test_smuxpeer.smux') }
+      it { is_expected.to compile.with_all_deps }
+      it { is_expected.to contain_class('snmpd') }
+      it { is_expected.to create_concat_fragment('snmpd+peer.test_smuxpeer.smux') }
     end
   end
 end

@@ -8,9 +8,9 @@ describe 'snmpd::extension::perl::global' do
 
     context "on #{os}" do
       describe 'with default parameters' do
-        it { should create_class('snmpd::extension::perl::global') }
-        it { should compile.with_all_deps }
-        it { should contain_concat_fragment('snmpd+ext.perl.global') }
+        it { is_expected.to create_class('snmpd::extension::perl::global') }
+        it { is_expected.to compile.with_all_deps }
+        it { is_expected.to contain_concat_fragment('snmpd+ext.perl.global') }
       end
     end
   end

@@ -30,7 +30,7 @@ define snmpd::vacm::access (
 
   concat_fragment { "snmpd+${name}.access":
     content =>
-      "access $group $context $sec_model $level $prefix $read $write none\n"
+      "access ${group} ${context} ${sec_model} ${level} ${prefix} ${read} ${write} none\n"
   }
 
   validate_array_member($sec_model, [

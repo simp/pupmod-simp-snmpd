@@ -1,7 +1,7 @@
 Summary: SNMP Puppet Module
 Name: pupmod-snmpd
 Version: 4.1.0
-Release: 4
+Release: 5
 License: Apache License, Version 2.0
 Group: Applications/System
 Source: %{name}-%{version}-%{release}.tar.gz
@@ -58,6 +58,9 @@ mkdir -p %{buildroot}/%{prefix}/snmpd
 # Post uninstall stuff
 
 %changelog
+* Thu Feb 18 2016 Chris Tessmer <chris.tessmer@onyxpoint.com> - 4.1.0-5
+- Minor linting fixes
+
 * Mon Nov 09 2015 Chris Tessmer <chris.tessmer@onypoint.com> - 4.1.0-4
 - migration to simplib and simpcat (lib/ only)
 

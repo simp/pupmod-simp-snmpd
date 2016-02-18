@@ -15,6 +15,6 @@ define snmpd::trapcommunity {
   include 'snmpd'
 
   concat_fragment { "snmpd+${name}.comstr":
-    content => "trapcommunity $name\n"
+    content => "trapcommunity ${name}\n"
   }
 }

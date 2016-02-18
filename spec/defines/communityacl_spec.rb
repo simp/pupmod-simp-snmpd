@@ -8,11 +8,11 @@ describe 'snmpd::communityacl' do
       let(:title) {'test_community'}
       let(:params) {{ :community => 'foo_bar' }}
 
-      it { should compile.with_all_deps }
-      it { should contain_class('snmpd') }
+      it { is_expected.to compile.with_all_deps }
+      it { is_expected.to contain_class('snmpd') }
 
       context 'base' do
-        it { should create_concat_fragment('snmpd+test_community.comm') }
+        it { is_expected.to create_concat_fragment('snmpd+test_community.comm') }
       end
     end
   end

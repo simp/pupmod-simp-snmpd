@@ -13,9 +13,9 @@ describe 'snmpd::procmon::proc' do
         :min => '50'
       }}
 
-      it { should compile.with_all_deps }
-      it { should contain_class('snmpd') }
-      it { should create_concat_fragment('snmpd+test_proc.proc') }
+      it { is_expected.to compile.with_all_deps }
+      it { is_expected.to contain_class('snmpd') }
+      it { is_expected.to create_concat_fragment('snmpd+test_proc.proc') }
     end
   end
 end

@@ -18,7 +18,7 @@ define snmpd::utils::mibfile {
 
   simp_file_line { $name:
     path   => '/etc/snmp/snmp.local.conf',
-    line   => "mibfile $name",
+    line   => "mibfile ${name}",
     notify => File['/etc/snmp/snmp.local.conf']
   }
 }

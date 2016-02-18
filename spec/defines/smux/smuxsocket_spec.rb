@@ -13,10 +13,10 @@ describe 'snmpd::smux::smuxsocket' do
         :allowed_nets  => '1.2.3.4/32'
       }}
 
-      it { should compile.with_all_deps }
-      it { should contain_class('snmpd') }
-      it { should create_concat_fragment('snmpd+socket.test_smuxsocket.smux') }
-      it { should create_iptables__add_tcp_stateful_listen('smux_test_smuxsocket') }
+      it { is_expected.to compile.with_all_deps }
+      it { is_expected.to contain_class('snmpd') }
+      it { is_expected.to create_concat_fragment('snmpd+socket.test_smuxsocket.smux') }
+      it { is_expected.to create_iptables__add_tcp_stateful_listen('smux_test_smuxsocket') }
     end
   end
 end

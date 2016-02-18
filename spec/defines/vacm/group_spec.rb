@@ -13,9 +13,9 @@ describe 'snmpd::vacm::group' do
         :secname => 'test_secname'
       }}
 
-      it { should compile.with_all_deps }
-      it { should contain_class('snmpd') }
-      it { should create_concat_fragment('snmpd+test_group.group') }
+      it { is_expected.to compile.with_all_deps }
+      it { is_expected.to contain_class('snmpd') }
+      it { is_expected.to create_concat_fragment('snmpd+test_group.group') }
     end
   end
 end

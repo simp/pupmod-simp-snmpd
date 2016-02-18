@@ -21,6 +21,6 @@ define snmpd::procmon::procfix (
   include 'snmpd'
 
   concat_fragment { "snmpd+${name}.procfix":
-    content => "procfix $name $prog $args\n"
+    content => "procfix ${name} ${prog} ${args}\n"
   }
 }

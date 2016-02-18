@@ -9,9 +9,9 @@ describe 'snmpd::trapcommunity' do
     context "on #{os}" do
       let(:title) {'test_trapcommunity'}
 
-      it { should compile.with_all_deps }
-      it { should contain_class('snmpd') }
-      it { should create_concat_fragment('snmpd+test_trapcommunity.comstr') }
+      it { is_expected.to compile.with_all_deps }
+      it { is_expected.to contain_class('snmpd') }
+      it { is_expected.to create_concat_fragment('snmpd+test_trapcommunity.comstr') }
     end
   end
 end

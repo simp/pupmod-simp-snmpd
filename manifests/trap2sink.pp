@@ -20,13 +20,13 @@ define snmpd::trap2sink (
   $community = '',
   $port = ''
 ) {
+  if !empty($port) {
+    validate_port($port)
+  }
+
   include 'snmpd'
 
   concat_fragment { "snmpd+${name}.trap2.sink":
-    content => "trap2sink $name $community $port\n"
-  }
-
-  if !empty($port) {
-    validate_port($port)
+    content => "trap2sink ${name} ${community} ${port}\n"
   }
 }

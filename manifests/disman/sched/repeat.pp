@@ -25,7 +25,7 @@ define snmpd::disman::sched::repeat (
 ) {
   include 'snmpd'
 
-  concat_fragment { "snmpd+disman.$name.sched":
-    content => "repeat $frequency $oid = $value\n"
+  concat_fragment { "snmpd+disman.${name}.sched":
+    content => "repeat ${frequency} ${oid} = ${value}\n"
   }
 }

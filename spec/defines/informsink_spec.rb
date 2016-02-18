@@ -13,9 +13,9 @@ describe 'snmpd::informsink' do
         :port      => '12345'
       }}
 
-      it { should compile.with_all_deps }
-      it { should create_concat_fragment('snmpd+test_informsink.inform.sink') }
-      it { should contain_class('snmpd') }
+      it { is_expected.to compile.with_all_deps }
+      it { is_expected.to create_concat_fragment('snmpd+test_informsink.inform.sink') }
+      it { is_expected.to contain_class('snmpd') }
     end
   end
 end

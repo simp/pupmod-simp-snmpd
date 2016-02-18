@@ -12,9 +12,9 @@ describe 'snmpd::extension::perl::expression' do
         :expression => 'exec'
       }}
 
-      it { should compile.with_all_deps }
-      it { should contain_class('snmpd') }
-      it { should create_concat_fragment('snmpd+ext.perl.exp.test_expression') }
+      it { is_expected.to compile.with_all_deps }
+      it { is_expected.to contain_class('snmpd') }
+      it { is_expected.to create_concat_fragment('snmpd+ext.perl.exp.test_expression') }
     end
   end
 end

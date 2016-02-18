@@ -17,16 +17,16 @@ define snmpd::smux::smuxsocket (
 ) {
   include 'snmpd'
 
+  validate_net_list($allowed_nets)
+
   concat_fragment { "snmpd+socket.${name}.smux":
-    content => "smuxsocket $ipv4_address\n"
+    content => "smuxsocket ${ipv4_address}\n"
   }
 
   if defined('iptables') and defined(Class['iptables']) {
-    iptables::add_tcp_stateful_listen { "smux_$name":
+    iptables::add_tcp_stateful_listen { "smux_${name}":
       client_nets => $allowed_nets,
       dports      => '199'
     }
   }
-
-  validate_net_list($allowed_nets)
 }

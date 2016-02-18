@@ -13,9 +13,9 @@ describe 'snmpd::disman::set_event' do
         :value => 'test_value'
       }}
 
-      it { should compile.with_all_deps }
-      it { should contain_class('snmpd') }
-      it { should create_concat_fragment('snmpd+disman.test_set_event.setevent') }
+      it { is_expected.to compile.with_all_deps }
+      it { is_expected.to contain_class('snmpd') }
+      it { is_expected.to create_concat_fragment('snmpd+disman.test_set_event.setevent') }
     end
   end
 end

@@ -18,9 +18,9 @@ describe 'snmpd::vacm::setaccess' do
         :types   => 'test_types'
       }}
 
-      it { should compile.with_all_deps }
-      it { should contain_class('snmpd') }
-      it { should create_concat_fragment('snmpd+test_setaccess.autha') }
+      it { is_expected.to compile.with_all_deps }
+      it { is_expected.to contain_class('snmpd') }
+      it { is_expected.to create_concat_fragment('snmpd+test_setaccess.autha') }
     end
   end
 end

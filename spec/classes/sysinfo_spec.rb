@@ -8,9 +8,9 @@ describe 'snmpd::sysinfo' do
 
     context "on #{os}" do
       describe 'with default parameters' do
-        it { should create_class('snmpd::sysinfo') }
-        it { should compile.with_all_deps }
-        it { should contain_concat_fragment('snmpd+info.system') }
+        it { is_expected.to create_class('snmpd::sysinfo') }
+        it { is_expected.to compile.with_all_deps }
+        it { is_expected.to contain_concat_fragment('snmpd+info.system') }
       end
     end
   end

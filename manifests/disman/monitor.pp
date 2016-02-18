@@ -23,6 +23,6 @@ define snmpd::disman::monitor (
   include 'snmpd'
 
   concat_fragment { "snmpd+disman.${name}.monitor":
-    content => "monitor $options $name $expression\n",
+    content => "monitor ${options} ${name} ${expression}\n",
   }
 }

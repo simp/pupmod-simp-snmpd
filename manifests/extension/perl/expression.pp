@@ -19,6 +19,6 @@ define snmpd::extension::perl::expression (
   include 'snmpd'
 
   concat_fragment { "snmpd+ext.perl.exp.${name}":
-    content => "perl $expression\n"
+    content => "perl ${expression}\n"
   }
 }

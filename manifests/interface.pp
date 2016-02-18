@@ -23,6 +23,6 @@ define snmpd::interface (
   include 'snmpd'
 
   concat_fragment { "snmpd+${name}.iface":
-    content => "interface $name $type $speed\n",
+    content => "interface ${name} ${type} ${speed}\n",
   }
 }

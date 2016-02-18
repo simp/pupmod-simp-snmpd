@@ -7,9 +7,9 @@ describe 'snmpd::agentx::master::perms' do
     end
 
     context "on #{os}" do
-      it { should create_class('snmpd::agentx::master::perms') }
-      it { should compile.with_all_deps }
-      it { should create_concat_fragment('snmpd+perms.agentX') }
+      it { is_expected.to create_class('snmpd::agentx::master::perms') }
+      it { is_expected.to compile.with_all_deps }
+      it { is_expected.to create_concat_fragment('snmpd+perms.agentX') }
     end
   end
 end
