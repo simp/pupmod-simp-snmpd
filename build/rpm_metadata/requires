@@ -1,0 +1,5 @@
+Requires: pupmod-simp-rsync >= 2.0.0-0
+Requires: pupmod-simp-simpcat >= 2.0.0-0
+Requires: pupmod-simp-simplib >= 1.0.0-0
+Requires: simp-rsync >= 2.0.0-0
+Obsoletes: pupmod-snmpd-test >= 0.0.1
