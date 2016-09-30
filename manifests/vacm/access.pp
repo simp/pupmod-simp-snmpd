@@ -28,7 +28,7 @@ define snmpd::vacm::access (
 ) {
   include 'snmpd'
 
-  concat_fragment { "snmpd+${name}.access":
+  simpcat_fragment { "snmpd+${name}.access":
     content =>
       "access ${group} ${context} ${sec_model} ${level} ${prefix} ${read} ${write} none\n"
   }

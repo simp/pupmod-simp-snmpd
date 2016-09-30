@@ -19,7 +19,7 @@ class snmpd::agentx::sub::conf (
   $agentx_timeout = '',
   $agentx_retries = ''
 ) {
-  concat_fragment { 'snmpd+sub.global.agentX':
+  simpcat_fragment { 'snmpd+sub.global.agentX':
     content => template('snmpd/agentX.erb')
   }
 

@@ -32,7 +32,7 @@ define snmpd::extension::arbitrary (
 ) {
   include 'snmpd'
 
-  concat_fragment { "snmpd+ext.${name}.${ext_type}":
+  simpcat_fragment { "snmpd+ext.${name}.${ext_type}":
     content => template('snmpd/arbitrary_ext.erb')
   }
 

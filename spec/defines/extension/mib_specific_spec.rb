@@ -16,7 +16,7 @@ describe 'snmpd::extension::mib_specific' do
 
       it { is_expected.to compile.with_all_deps }
       it { is_expected.to contain_class('snmpd') }
-      it { is_expected.to create_concat_fragment('snmpd+ext.test_mib_specific.pass') }
+      it { is_expected.to create_simpcat_fragment('snmpd+ext.test_mib_specific.pass') }
     end
   end
 end

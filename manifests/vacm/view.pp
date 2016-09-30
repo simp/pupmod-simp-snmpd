@@ -23,12 +23,12 @@ define snmpd::vacm::view (
   $mask = ''
 ) {
   if empty($mask) {
-    concat_fragment { "snmpd+${name}.view":
+    simpcat_fragment { "snmpd+${name}.view":
       content => "view ${vname} ${v_type} ${oid}\n"
     }
   }
   else {
-    concat_fragment { "snmpd+${name}.view":
+    simpcat_fragment { "snmpd+${name}.view":
       content => "view ${vname} ${v_type} ${oid} ${mask}\n",
     }
   }

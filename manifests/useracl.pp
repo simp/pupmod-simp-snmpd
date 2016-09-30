@@ -33,7 +33,7 @@ define snmpd::useracl (
 ) {
   include 'snmpd'
 
-  concat_fragment { "snmpd+${name}.auth":
+  simpcat_fragment { "snmpd+${name}.auth":
     content => template('snmpd/acl.erb')
   }
 

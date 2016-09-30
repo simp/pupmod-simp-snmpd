@@ -20,7 +20,7 @@ define snmpd::inject_handler (
 ) {
   include 'snmpd'
 
-  concat_fragment { "snmpd+${name}.${handler_type}.inject":
+  simpcat_fragment { "snmpd+${name}.${handler_type}.inject":
     content => "injectHandler ${handler_type} ${modulename}\n"
   }
 

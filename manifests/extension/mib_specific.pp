@@ -26,7 +26,7 @@ define snmpd::extension::mib_specific (
 ) {
   include 'snmpd'
 
-  concat_fragment { "snmpd+ext.${name}.${ext_type}":
+  simpcat_fragment { "snmpd+ext.${name}.${ext_type}":
     content => template('snmpd/mib_specific_ext.erb')
   }
 

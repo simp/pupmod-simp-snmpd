@@ -17,7 +17,7 @@ class snmpd::extension::perl::global (
   $disable_perl = '',
   $perl_init_file = ''
 ) {
-  concat_fragment { 'snmpd+ext.perl.global':
+  simpcat_fragment { 'snmpd+ext.perl.global':
     content => template('snmpd/perl_global.erb')
   }
 }

@@ -38,10 +38,10 @@ class snmpd (
   validate_integer($agentgid)
   validate_integer($agentuid)
 
-  $l_fragdir = fragmentdir('snmpd')
-  $l_outdir = concat_output('snmpd')
+  $l_fragdir = simpcat_fragmentdir('snmpd')
+  $l_outdir = simpcat_output('snmpd')
 
-  concat_build { 'snmpd':
+  simpcat_build { 'snmpd':
     target => '/etc/snmp/snmpd.conf',
     order  => [
         '*.all',
@@ -84,7 +84,7 @@ class snmpd (
     notify => File['/etc/snmp/snmpd.conf']
   }
 
-  concat_build { 'snmpd_agentaddress':
+  simpcat_build { 'snmpd_agentaddress':
     clean_whitespace => 'all',
     target           => "${l_fragdir}/agentaddress.all",
     parent_build     => 'snmpd',
@@ -157,7 +157,7 @@ class snmpd (
     pattern => 'ALL'
   }
 
-  concat_fragment { 'snmpd+main.conf':
+  simpcat_fragment { 'snmpd+main.conf':
     content => template('snmpd/main.conf.erb')
   }
 

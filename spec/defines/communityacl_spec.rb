@@ -12,7 +12,7 @@ describe 'snmpd::communityacl' do
       it { is_expected.to contain_class('snmpd') }
 
       context 'base' do
-        it { is_expected.to create_concat_fragment('snmpd+test_community.comm') }
+        it { is_expected.to create_simpcat_fragment('snmpd+test_community.comm') }
       end
     end
   end

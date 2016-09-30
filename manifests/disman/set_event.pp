@@ -23,7 +23,7 @@ define snmpd::disman::set_event (
 ) {
   include 'snmpd'
 
-  concat_fragment { "snmpd+disman.${name}.setevent":
+  simpcat_fragment { "snmpd+disman.${name}.setevent":
     content =>
       inline_template("setEvent <%= @name %> <% if @dash_i then -%>-I <% end -%><%= @oid %> = <%= @value %>\n")
   }

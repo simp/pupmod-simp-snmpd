@@ -20,7 +20,7 @@ class snmpd::authtrapenable (
     default => '2'
   }
 
-  concat_fragment { 'snmpd+all.authtrapenable':
+  simpcat_fragment { 'snmpd+all.authtrapenable':
     content => "authtrapenable ${l_enable}\n"
   }
 }
