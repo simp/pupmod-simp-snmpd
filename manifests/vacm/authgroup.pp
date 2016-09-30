@@ -25,7 +25,7 @@ define snmpd::vacm::authgroup (
 ) {
   include 'snmpd'
 
-  concat_fragment { "snmpd+${name}.authg":
+  simpcat_fragment { "snmpd+${name}.authg":
     content => template('snmpd/authview.erb')
   }
 

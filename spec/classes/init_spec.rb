@@ -8,8 +8,8 @@ describe 'snmpd' do
       describe 'with default parameters' do
         it { is_expected.to create_class('snmpd') }
         it { is_expected.to compile.with_all_deps }
-        it { is_expected.to contain_concat_build('snmpd') }
-        it { is_expected.to contain_concat_build('snmpd_agentaddress') }
+        it { is_expected.to contain_simpcat_build('snmpd') }
+        it { is_expected.to contain_simpcat_build('snmpd_agentaddress') }
         it { is_expected.to create_file('/etc/snmp/snmpd.conf').with({
             :notify  => ['Service[snmpd]', 'Exec[set_snmp_perms]'],
             :audit   => 'content',

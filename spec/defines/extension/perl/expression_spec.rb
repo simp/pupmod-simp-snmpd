@@ -14,7 +14,7 @@ describe 'snmpd::extension::perl::expression' do
 
       it { is_expected.to compile.with_all_deps }
       it { is_expected.to contain_class('snmpd') }
-      it { is_expected.to create_concat_fragment('snmpd+ext.perl.exp.test_expression') }
+      it { is_expected.to create_simpcat_fragment('snmpd+ext.perl.exp.test_expression') }
     end
   end
 end

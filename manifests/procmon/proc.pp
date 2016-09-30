@@ -20,7 +20,7 @@ define snmpd::procmon::proc (
 ) {
   include 'snmpd'
 
-  concat_fragment { "snmpd+${name}.proc":
+  simpcat_fragment { "snmpd+${name}.proc":
     content => template('snmpd/proc.erb')
   }
 }

@@ -10,7 +10,7 @@ describe 'snmpd::disman::globals' do
       describe 'with default parameters' do
         it { is_expected.to create_class('snmpd::disman::globals') }
         it { is_expected.to compile.with_all_deps }
-        it { is_expected.to contain_concat_fragment('snmpd+disman.globals') }
+        it { is_expected.to contain_simpcat_fragment('snmpd+disman.globals') }
       end
     end
   end

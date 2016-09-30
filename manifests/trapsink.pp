@@ -26,7 +26,7 @@ define snmpd::trapsink (
 
   include 'snmpd'
 
-  concat_fragment { "snmpd+${name}.trap.sink":
+  simpcat_fragment { "snmpd+${name}.trap.sink":
     content => "trapsink ${name} ${community} ${port}\n"
   }
 }

@@ -33,7 +33,7 @@ define snmpd::disman::sched::at (
 ) {
   include 'snmpd'
 
-  concat_fragment { "snmpd+disman.${name}.at":
+  simpcat_fragment { "snmpd+disman.${name}.at":
     content => "at ${minute} ${hour} ${day} ${month} ${weekday} ${oid} = ${value}\n"
   }
 }

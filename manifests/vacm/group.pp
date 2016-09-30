@@ -28,7 +28,7 @@ define snmpd::vacm::group (
 ) {
   include 'snmpd'
 
-  concat_fragment { "snmpd+${name}.group":
+  simpcat_fragment { "snmpd+${name}.group":
     content => "group ${group} ${sec_model} ${secname}\n",
   }
 

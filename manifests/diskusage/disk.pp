@@ -27,7 +27,7 @@ define snmpd::diskusage::disk (
 ) {
   include 'snmpd'
 
-  concat_fragment { "snmpd+${name}.disks":
+  simpcat_fragment { "snmpd+${name}.disks":
     content => template('snmpd/disk.erb')
   }
 }

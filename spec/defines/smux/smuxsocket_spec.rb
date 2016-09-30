@@ -15,7 +15,7 @@ describe 'snmpd::smux::smuxsocket' do
 
       it { is_expected.to compile.with_all_deps }
       it { is_expected.to contain_class('snmpd') }
-      it { is_expected.to create_concat_fragment('snmpd+socket.test_smuxsocket.smux') }
+      it { is_expected.to create_simpcat_fragment('snmpd+socket.test_smuxsocket.smux') }
       it { is_expected.to create_iptables__add_tcp_stateful_listen('smux_test_smuxsocket') }
     end
   end

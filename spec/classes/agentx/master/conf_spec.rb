@@ -10,7 +10,7 @@ describe 'snmpd::agentx::master::conf' do
       describe 'with default parameters' do
         it { is_expected.to create_class('snmpd::agentx::master::conf') }
         it { is_expected.to compile.with_all_deps }
-        it { is_expected.to create_concat_fragment('snmpd+master.global.agentX') }
+        it { is_expected.to create_simpcat_fragment('snmpd+master.global.agentX') }
       end
     end
   end

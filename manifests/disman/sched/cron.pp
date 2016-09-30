@@ -30,7 +30,7 @@ define snmpd::disman::sched::cron (
 ) {
   include 'snmpd'
 
-  concat_fragment { "snmpd+disman.${name}.cron":
+  simpcat_fragment { "snmpd+disman.${name}.cron":
     content => "cron ${minute} ${hour} ${day} ${month} ${weekday} ${oid} = ${value}\n"
   }
 }
