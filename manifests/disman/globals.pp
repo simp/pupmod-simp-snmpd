@@ -23,7 +23,7 @@ class snmpd::disman::globals (
   $link_up_down_notifications = '',
   $default_monitors = ''
 ) {
-  concat_fragment { 'snmpd+disman.globals':
+  simpcat_fragment { 'snmpd+disman.globals':
     content => template('snmpd/disman_globals.erb')
   }
 

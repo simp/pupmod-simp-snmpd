@@ -23,7 +23,7 @@ class snmpd::sysinfo (
   $sys_descr = '',
   $sys_object_id = ''
 ) {
-  concat_fragment { 'snmpd+info.system':
+  simpcat_fragment { 'snmpd+info.system':
     content => template('snmpd/sysinfo.erb')
   }
 

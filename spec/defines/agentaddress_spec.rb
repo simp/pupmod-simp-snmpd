@@ -14,7 +14,7 @@ describe 'snmpd::agentaddress' do
         it { is_expected.to contain_class('snmpd') }
 
         context 'base' do
-          it { is_expected.to create_concat_fragment('snmpd_agentaddress+test.agentaddress') }
+          it { is_expected.to create_simpcat_fragment('snmpd_agentaddress+test.agentaddress') }
           it { is_expected.to contain_iptables__add_udp_listen('snmpd_test_udp_listen') }
         end
       end

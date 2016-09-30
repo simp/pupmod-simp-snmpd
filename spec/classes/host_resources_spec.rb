@@ -10,7 +10,7 @@ describe 'snmpd::host_resources' do
       describe 'with default parameters' do
         it { is_expected.to create_class('snmpd::host_resources') }
         it { is_expected.to compile.with_all_deps }
-        it { is_expected.to create_concat_fragment('snmpd+info.host_resources') }
+        it { is_expected.to create_simpcat_fragment('snmpd+info.host_resources') }
       end
     end
   end

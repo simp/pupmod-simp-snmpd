@@ -24,7 +24,7 @@ define snmpd::informsink (
 ) {
   include 'snmpd'
 
-  concat_fragment { "snmpd+${name}.inform.sink":
+  simpcat_fragment { "snmpd+${name}.inform.sink":
     content => "informsink ${name} ${community} ${port}\n"
   }
 }

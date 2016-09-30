@@ -24,7 +24,7 @@ define snmpd::logmatch (
 ) {
   include 'snmpd'
 
-  concat_fragment { "snmpd+${name}.logmatch":
+  simpcat_fragment { "snmpd+${name}.logmatch":
     content => "logmatch ${name} ${file_path} ${cycle_time} ${regex}\n"
   }
 }

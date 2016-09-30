@@ -19,7 +19,7 @@ define snmpd::smux::smuxsocket (
 
   validate_net_list($allowed_nets)
 
-  concat_fragment { "snmpd+socket.${name}.smux":
+  simpcat_fragment { "snmpd+socket.${name}.smux":
     content => "smuxsocket ${ipv4_address}\n"
   }
 

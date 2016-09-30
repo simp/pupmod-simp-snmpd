@@ -17,7 +17,7 @@ class snmpd::host_resources (
   $skip_NFS_in_host_resources = '',
   $storage_use_NFS = ''
 ) {
-  concat_fragment { 'snmpd+info.host_resources':
+  simpcat_fragment { 'snmpd+info.host_resources':
     content => template('snmpd/host_resources.erb')
   }
 }

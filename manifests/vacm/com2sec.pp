@@ -37,7 +37,7 @@ define snmpd::vacm::com2sec (
 ) {
   include 'snmpd'
 
-  concat_fragment { "snmpd+${name}.com2sec":
+  simpcat_fragment { "snmpd+${name}.com2sec":
     content => template('snmpd/com2sec.erb')
   }
 

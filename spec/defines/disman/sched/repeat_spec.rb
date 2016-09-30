@@ -17,7 +17,7 @@ describe 'snmpd::disman::sched::repeat' do
 
       it { is_expected.to compile.with_all_deps }
       it { is_expected.to contain_class('snmpd') }
-      it { is_expected.to create_concat_fragment('snmpd+disman.test_repeat.sched') }
+      it { is_expected.to create_simpcat_fragment('snmpd+disman.test_repeat.sched') }
     end
   end
 end

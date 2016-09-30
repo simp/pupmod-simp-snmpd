@@ -14,7 +14,7 @@
 define snmpd::v1trapaddress {
   include 'snmpd'
 
-  concat_fragment { 'snmpd+all.v1trapaddress':
+  simpcat_fragment { 'snmpd+all.v1trapaddress':
     content => "v1trapaddress ${name}\n"
   }
 }

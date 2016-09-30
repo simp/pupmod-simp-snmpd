@@ -10,7 +10,7 @@ describe 'snmpd::sysinfo' do
       describe 'with default parameters' do
         it { is_expected.to create_class('snmpd::sysinfo') }
         it { is_expected.to compile.with_all_deps }
-        it { is_expected.to contain_concat_fragment('snmpd+info.system') }
+        it { is_expected.to contain_simpcat_fragment('snmpd+info.system') }
       end
     end
   end

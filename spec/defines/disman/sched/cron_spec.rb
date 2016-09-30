@@ -15,7 +15,7 @@ describe 'snmpd::disman::sched::cron' do
 
       it { is_expected.to compile.with_all_deps }
       it { is_expected.to contain_class('snmpd') }
-      it { is_expected.to create_concat_fragment('snmpd+disman.test_cron.cron') }
+      it { is_expected.to create_simpcat_fragment('snmpd+disman.test_cron.cron') }
     end
   end
 end

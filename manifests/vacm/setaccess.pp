@@ -23,7 +23,7 @@ define snmpd::vacm::setaccess (
 ) {
   include 'snmpd'
 
-  concat_fragment { "snmpd+${name}.autha":
+  simpcat_fragment { "snmpd+${name}.autha":
     content => "setaccess ${group} ${context} ${model} ${level} ${prefix} ${view} ${types}\n"
   }
 }

@@ -15,7 +15,7 @@ describe 'snmpd::proxy' do
 
       it { is_expected.to compile.with_all_deps }
       it { is_expected.to contain_class('snmpd') }
-      it { is_expected.to create_concat_fragment('snmpd+test_proxy.proxy') }
+      it { is_expected.to create_simpcat_fragment('snmpd+test_proxy.proxy') }
     end
   end
 end
