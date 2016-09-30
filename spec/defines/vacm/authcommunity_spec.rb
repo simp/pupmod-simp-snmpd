@@ -15,7 +15,7 @@ describe 'snmpd::vacm::authcommunity' do
 
       it { is_expected.to compile.with_all_deps }
       it { is_expected.to contain_class('snmpd') }
-      it { is_expected.to create_concat_fragment('snmpd+test_authcommunity.authc') }
+      it { is_expected.to create_simpcat_fragment('snmpd+test_authcommunity.authc') }
     end
   end
 end

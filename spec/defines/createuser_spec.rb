@@ -13,7 +13,7 @@ describe 'snmpd::createuser' do
         :priv_phrase => 'test_priv_pass'
       }}
       it { is_expected.to compile.with_all_deps }
-      it { is_expected.to create_concat_fragment('snmpd+test_user.user') }
+      it { is_expected.to create_simpcat_fragment('snmpd+test_user.user') }
       it { is_expected.to contain_class('snmpd') }
     end
   end

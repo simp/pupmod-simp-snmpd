@@ -26,7 +26,7 @@ define snmpd::override (
 ) {
   include 'snmpd'
 
-  concat_fragment { "snmpd+${name}_override.other":
+  simpcat_fragment { "snmpd+${name}_override.other":
     content =>
       inline_template("override <% if @rw then %>-rw <% end %><%= @oid %> <%= @or_type %> <%= @value %>\n")
   }

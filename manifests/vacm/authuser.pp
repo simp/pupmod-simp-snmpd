@@ -25,7 +25,7 @@ define snmpd::vacm::authuser (
 ) {
   include 'snmpd'
 
-  concat_fragment { "snmpd+${name}.authu":
+  simpcat_fragment { "snmpd+${name}.authu":
     content => template('snmpd/authview.erb')
   }
 }

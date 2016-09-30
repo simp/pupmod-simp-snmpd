@@ -36,7 +36,7 @@ define snmpd::agentaddress (
 ) {
   include 'snmpd'
 
-  concat_fragment { "snmpd_agentaddress+${name}.agentaddress":
+  simpcat_fragment { "snmpd_agentaddress+${name}.agentaddress":
     content => template('snmpd/agentaddress.erb'),
   }
 

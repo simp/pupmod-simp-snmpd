@@ -15,7 +15,7 @@
 class snmpd::swap (
   $min
 ) {
-  concat_fragment { 'snmpd+swap.load':
+  simpcat_fragment { 'snmpd+swap.load':
     content => "swap ${min}\n"
   }
 

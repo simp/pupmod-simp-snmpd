@@ -25,7 +25,7 @@ define snmpd::vacm::authaccess (
 ) {
   include 'snmpd'
 
-  concat_fragment { "snmpd+${name}.autha":
+  simpcat_fragment { "snmpd+${name}.autha":
     content => template('snmpd/authaccess.erb')
   }
 }

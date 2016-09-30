@@ -16,7 +16,7 @@
 class snmpd::diskusage::include_all_disks (
   $minpercent
 ) {
-  concat_fragment { 'snmpd+all.disks':
+  simpcat_fragment { 'snmpd+all.disks':
     content => "includeAllDisks ${minpercent}%\n"
   }
 

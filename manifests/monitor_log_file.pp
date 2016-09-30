@@ -23,7 +23,7 @@ define snmpd::monitor_log_file (
 ) {
   include 'snmpd'
 
-  concat_fragment { "snmpd+${name}.logmon":
+  simpcat_fragment { "snmpd+${name}.logmon":
     content => "file ${file_path} ${max_size}\n"
   }
 }

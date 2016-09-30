@@ -23,7 +23,7 @@ define snmpd::proxy (
 ) {
   include 'snmpd'
 
-  concat_fragment { "snmpd+${name}.proxy":
+  simpcat_fragment { "snmpd+${name}.proxy":
     content => template('snmpd/proxy.erb')
   }
 }

@@ -37,7 +37,7 @@ define snmpd::createuser (
       "createUser -e ${engine_id} ${name} ${auth_type} ${auth_phrase} ${priv_type} ${priv_phrase}\n"
   }
 
-  concat_fragment { "snmpd+${name}.user":
+  simpcat_fragment { "snmpd+${name}.user":
     content => $lcontent
   }
 }

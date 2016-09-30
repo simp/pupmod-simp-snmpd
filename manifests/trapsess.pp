@@ -17,7 +17,7 @@ define snmpd::trapsess (
 ) {
   include 'snmpd'
 
-  concat_fragment { "snmpd+${name}.trapsess":
+  simpcat_fragment { "snmpd+${name}.trapsess":
     content => "trapsess ${snmpcmd_args} ${name}\n"
   }
 }

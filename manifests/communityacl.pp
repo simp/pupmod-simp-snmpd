@@ -44,7 +44,7 @@ define snmpd::communityacl (
   validate_bool($ro)
   validate_bool($ipv6)
 
-  concat_fragment { "snmpd+${name}.comm":
+  simpcat_fragment { "snmpd+${name}.comm":
     content => template('snmpd/acl.erb')
   }
 }

@@ -17,7 +17,7 @@ class snmpd::load (
   $max5 = '',
   $max15 = ''
 ) {
-  concat_fragment { 'snmpd+mon.load':
+  simpcat_fragment { 'snmpd+mon.load':
     content => "load ${max1} ${max5} ${max15}\n"
   }
 }

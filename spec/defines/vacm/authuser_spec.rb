@@ -15,7 +15,7 @@ describe 'snmpd::vacm::authuser' do
 
       it { is_expected.to compile.with_all_deps }
       it { is_expected.to contain_class('snmpd') }
-      it { is_expected.to create_concat_fragment('snmpd+test_authuser.authu') }
+      it { is_expected.to create_simpcat_fragment('snmpd+test_authuser.authu') }
     end
   end
 end

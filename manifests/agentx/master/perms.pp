@@ -22,7 +22,7 @@ class snmpd::agentx::master::perms (
   $group = ''
 ) {
 
-  concat_fragment { 'snmpd+perms.agentX':
+  simpcat_fragment { 'snmpd+perms.agentX':
     content => template('snmpd/agentX_perms.erb')
   }
 }

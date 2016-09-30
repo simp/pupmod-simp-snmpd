@@ -16,7 +16,7 @@ describe 'snmpd::extension::arbitrary' do
 
       it { is_expected.to compile.with_all_deps }
       it { is_expected.to contain_class('snmpd') }
-      it { is_expected.to create_concat_fragment('snmpd+ext.test_arbitrary.exec') }
+      it { is_expected.to create_simpcat_fragment('snmpd+ext.test_arbitrary.exec') }
     end
   end
 end

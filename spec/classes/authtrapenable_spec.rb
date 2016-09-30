@@ -10,7 +10,7 @@ describe 'snmpd::authtrapenable' do
       describe 'with default parameters' do
         it { is_expected.to create_class('snmpd::authtrapenable') }
         it { is_expected.to compile.with_all_deps }
-        it { is_expected.to contain_concat_fragment('snmpd+all.authtrapenable') }
+        it { is_expected.to contain_simpcat_fragment('snmpd+all.authtrapenable') }
       end
     end
   end

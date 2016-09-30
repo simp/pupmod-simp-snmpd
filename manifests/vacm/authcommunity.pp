@@ -23,7 +23,7 @@ define snmpd::vacm::authcommunity (
 ) {
   include 'snmpd'
 
-  concat_fragment { "snmpd+${name}.authc":
+  simpcat_fragment { "snmpd+${name}.authc":
     content => template('snmpd/authview.erb')
   }
 }
