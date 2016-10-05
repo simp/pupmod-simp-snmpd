@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_26741e9a",
+        "filename": "build/rpm_metadata/requires",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1004834
+      },
+      "writtenOn": "2016-10-05T13:26:57Z",
+      "side": 1,
+      "message": "Not required. This is only needed on an Rsync server, not client.",
+      "revId": "6d75facce9f88395f666769922c86f3794c45e12",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
