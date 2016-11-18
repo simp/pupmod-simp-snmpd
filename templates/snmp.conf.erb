@@ -31,8 +31,8 @@ noRangeCheck yes
 <% if @no_token_warnings then -%>
 noTokenWarnings
 <% end -%>
-<% if !@reverse_encode_BER.empty? then -%>
-reverseEncodeBER <%= @reverse_encode_BER %>
+<% if !@reverse_encode_ber.empty? then -%>
+reverseEncodeBER <%= @reverse_encode_ber %>
 <% end -%>
 <% if !@def_security_name.empty? then -%>
 defSecurityName <%= @def_security_name %>
@@ -67,7 +67,7 @@ defPrivMasterKey <%= @def_priv_master_key %>
 <% if !@def_priv_localized_key.empty? then -%>
 defPrivLocalizedKey <%= @def_priv_localized_key %>
 <% end -%>
-<% 
+<%
 lmibdirs = [ '/usr/share/snmp/mibs' ]
 lmibdirs += @mibdirs
 lmibdirs.delete('')

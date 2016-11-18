@@ -5,8 +5,8 @@
 # == Parameters
 #
 # [*ignore_disk*]
-# [*skip_NFS_in_host_resources*]
-# [*storage_use_NFS*]
+# [*skip_nfs_in_host_resources*]
+# [*storage_use_nfs*]
 #
 # == Authors
 #
@@ -14,8 +14,8 @@
 #
 class snmpd::host_resources (
   $ignore_disk = '',
-  $skip_NFS_in_host_resources = '',
-  $storage_use_NFS = ''
+  $skip_nfs_in_host_resources = '',
+  $storage_use_nfs = ''
 ) {
   simpcat_fragment { 'snmpd+info.host_resources':
     content => template('snmpd/host_resources.erb')

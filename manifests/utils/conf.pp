@@ -20,7 +20,7 @@
 # [*client_send_buf*]
 # [*no_range_check*]
 # [*no_token_warnings*]
-# [*reverse_encode_BER*]
+# [*reverse_encode_ber*]
 # [*def_security_name*]
 # [*def_security_level*]
 # [*def_passphrase*]
@@ -79,7 +79,7 @@ class snmpd::utils::conf (
   $client_send_buf = '',
   $no_range_check = false,
   $no_token_warnings = false,
-  $reverse_encode_BER = '',
+  $reverse_encode_ber = '',
   $def_security_name = '',
   $def_security_level = 'authPriv',
   $def_passphrase = '',
