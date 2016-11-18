@@ -6,7 +6,7 @@ if @ipv6 then
     lstr = "com2sec6"
 elsif not @sockpath.empty? then
     lstr = "com2secunix"
-    lsource = @sockpath   
+    lsource = @sockpath
 end
 
 if not @context.empty? then
