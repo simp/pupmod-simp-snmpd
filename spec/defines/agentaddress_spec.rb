@@ -3,6 +3,9 @@ require 'spec_helper'
 describe 'snmpd::agentaddress' do
 
   on_supported_os.each do |os, base_facts|
+    let :pre_condition do
+      'include iptables'
+    end
     let(:facts) do
       base_facts.merge({ :interfaces => 'eth0' })
     end

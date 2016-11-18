@@ -67,7 +67,7 @@ defPrivMasterKey <%= @def_priv_master_key %>
 <% if !@def_priv_localized_key.empty? then -%>
 defPrivLocalizedKey <%= @def_priv_localized_key %>
 <% end -%>
-<% 
+<%
 lmibdirs = [ '/usr/share/snmp/mibs' ]
 lmibdirs += @mibdirs
 lmibdirs.delete('')

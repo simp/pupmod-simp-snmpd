@@ -5,7 +5,9 @@ describe 'snmpd::smux::smuxsocket' do
     let(:facts) do
       base_facts.merge({ :interfaces => 'eth0' })
     end
-
+    let :pre_condition do
+      'include iptables'
+    end
     context "on #{os}" do
       let(:title) {'test_smuxsocket'}
       let(:params) {{

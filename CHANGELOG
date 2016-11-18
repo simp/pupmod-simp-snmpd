@@ -1,3 +1,8 @@
+* Mon Nov 21 2016 Chris Tessmer <chris.tessmer@onyxpoint.com> - 5.0.0-5
+- Complaince Map removal and general housekeeping
+- templates updated to new syntax
+- some spec tests were fixed.
+
 * Fri Sep 30 2016 Trevor Vaughan <tvaughan@onyxpoint.com> - 5.0.0-0
 - Updated to use the version of 'simpcat' that does not conflict with
   'puppetlabs/concat'.
