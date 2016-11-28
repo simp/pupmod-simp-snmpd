@@ -8,7 +8,8 @@ describe 'snmpd::diskusage::include_all_disks' do
     end
 
     context "on #{os}" do
-      describe 'with default parameters' do
+      describe 'with specified parameter' do
+        let(:params) {{ :minpercent => '70' }}
         it { is_expected.to create_class('snmpd::diskusage::include_all_disks') }
         it { is_expected.to compile.with_all_deps }
         it { is_expected.to create_simpcat_fragment('snmpd+all.disks') }
