@@ -22,6 +22,6 @@ define snmpd::disman::notification_event (
   include 'snmpd'
 
   simpcat_fragment { "snmpd+disman.${name}.ne":
-    content => "notificationEvent ${name} ${notification} ${::varbinds}\n"
+    content => "notificationEvent ${name} ${notification} ${facts['varbinds']}\n"
   }
 }
