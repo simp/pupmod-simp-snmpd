@@ -17,22 +17,22 @@
 # * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 class snmpd (
-  $rsync_server = hiera('rsync::server'),
-  $rsync_timeout = hiera('rsync::timeout','2'),
-  $agentgid = '333',
-  $agentuid = '333',
-  $leave_pidfile = 'no',
-  $max_get_bulk_repeats = '1024',
-  $max_get_bulk_responses = '100',
-  $engine_id = '',
-  $engine_id_type = '',
-  $engine_id_nic = '',
+  $rsync_source                   = "snmp_${::environment}/dlmod",
+  $rsync_server                   = hiera('rsync::server'),
+  $rsync_timeout                  = hiera('rsync::timeout','2'),
+  $agentgid                       = '333',
+  $agentuid                       = '333',
+  $leave_pidfile                  = 'no',
+  $max_get_bulk_repeats           = '1024',
+  $max_get_bulk_responses         = '100',
+  $engine_id                      = '',
+  $engine_id_type                 = '',
+  $engine_id_nic                  = '',
   $dont_log_tcp_wrappers_connects = false
 ){
-  include 'rsync'
-  include 'tcpwrappers'
-  include 'snmpd::utils'
-
+  include '::rsync'
+  include '::tcpwrappers'
+  include '::snmpd::utils'
 
   validate_bool($dont_log_tcp_wrappers_connects)
   validate_integer($agentgid)
@@ -127,7 +127,7 @@ class snmpd (
   #
   # If this does not succeed, then the entire build chain will fail.
   rsync { 'snmp_dlmod':
-    source       => 'snmp/dlmod',
+    source       => $rsync_source,
     target       => '/usr/local/share/snmp',
     server       => $rsync_server,
     timeout      => $rsync_timeout,
