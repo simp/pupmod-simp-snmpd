@@ -12,10 +12,11 @@
 # * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 class snmpd::utils (
-  $rsync_server = hiera('rsync::server'),
+  $rsync_source  = "snmp_${::environment}/mibs",
+  $rsync_server  = hiera('rsync::server'),
   $rsync_timeout = hiera('rsync::timeout','2')
 ){
-  include 'rsync'
+  include '::rsync'
 
   package { 'net-snmp-utils': ensure => 'latest' }
 
@@ -44,7 +45,7 @@ class snmpd::utils (
 
   # This pulls down all custom mibs from the rsync server.
   rsync { 'snmp_mibs':
-    source       => 'snmp/mibs',
+    source       => $rsync_source,
     target       => '/usr/local/share/snmp',
     server       => $rsync_server,
     timeout      => $rsync_timeout,

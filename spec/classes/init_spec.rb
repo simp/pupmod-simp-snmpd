@@ -21,7 +21,10 @@ describe 'snmpd' do
             :notify  => ['Service[snmpd]', 'Exec[set_snmp_perms]'],
             :require => ['Package[net-snmp]', 'Package[net-snmp-libs]']
         })}
-        it { is_expected.to contain_rsync('snmp_dlmod') }
+        it { is_expected.to contain_rsync('snmp_dlmod').with({
+          :source => "snmp_#{environment}/dlmod"
+          })
+        }
         it { is_expected.to contain_service('snmpd').with({
             :ensure    => 'running',
             :enable    => true,
