@@ -11,6 +11,12 @@ describe 'snmpd::utils' do
         it { is_expected.to create_class('snmpd::utils') }
         it { is_expected.to compile.with_all_deps }
         it { is_expected.to contain_class('rsync') }
+        it { is_expected.to contain_rsync('snmp_mibs').with({
+          :source => "snmp_#{environment}/mibs",
+          :server => "test.example.domain",
+          :timeout => "2"
+          })
+        }
         it { is_expected.to contain_package('net-snmp-utils') }
         it { is_expected.to contain_exec('set_snmp_perms') }
         it { is_expected.to create_file('/etc/snmp/snmp.local.conf').with({

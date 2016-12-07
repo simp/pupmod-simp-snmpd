@@ -18,8 +18,8 @@
 #
 class snmpd (
   $rsync_source                   = "snmp_${::environment}/dlmod",
-  $rsync_server                   = hiera('rsync::server'),
-  $rsync_timeout                  = hiera('rsync::timeout','2'),
+  $rsync_server                   = simplib::lookup('simp_options::rsync::server',  { 'default_value' => '127.0.0.1', 'value_type' => String}),
+  $rsync_timeout                  = simplib::lookup('simp_options::rsync::timeout', { 'default_value' => '2', 'value_type' => String }),
   $agentgid                       = '333',
   $agentuid                       = '333',
   $leave_pidfile                  = 'no',
@@ -28,15 +28,15 @@ class snmpd (
   $engine_id                      = '',
   $engine_id_type                 = '',
   $engine_id_nic                  = '',
+  $tcpwrappers                    = simplib::lookup('simp_options::tcpwrappers', { 'default_value' => false, 'value_type' => Boolean }),
   $dont_log_tcp_wrappers_connects = false
 ){
-  include '::rsync'
-  include '::tcpwrappers'
-  include '::snmpd::utils'
-
   validate_bool($dont_log_tcp_wrappers_connects)
   validate_integer($agentgid)
   validate_integer($agentuid)
+
+  include '::rsync'
+  include '::snmpd::utils'
 
   $l_fragdir = simpcat_fragmentdir('snmpd')
   $l_outdir = simpcat_output('snmpd')
@@ -153,14 +153,21 @@ class snmpd (
     ]
   }
 
-  tcpwrappers::allow { 'snmpd':
-    pattern => 'ALL'
+  if $tcpwrappers {
+    include '::tcpwrappers'
+    tcpwrappers::allow { 'snmpd':
+      pattern => 'ALL'
+    }
   }
 
   simpcat_fragment { 'snmpd+main.conf':
     content => template('snmpd/main.conf.erb')
   }
 
+  #TODO validate_integer() above fails on an empty $agentgid, so can't
+  # really get here.  But, when we refactor to use typed-parameters
+  # (e.g., Optional[Integer]) this logic can be applied with if
+  # $agentgid.
   if !empty($agentgid) {
     group { 'snmp':
       ensure    => 'present',
@@ -170,6 +177,10 @@ class snmpd (
     }
   }
 
+  #TODO validate_integer() above fails on an empty $agentuid, so can't
+  # really get here.  But, when we refactor to use typed-parameters
+  # (e.g., Optional[Integer]) this logic can be applied with if
+  # $agentuid.
   if !empty($agentuid) {
     user { 'snmp':
       ensure     => 'present',
