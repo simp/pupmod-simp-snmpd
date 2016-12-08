@@ -13,9 +13,11 @@
 #
 class snmpd::utils (
   $rsync_source  = "snmp_${::environment}/mibs",
-  $rsync_server  = hiera('rsync::server'),
-  $rsync_timeout = hiera('rsync::timeout','2')
+  $rsync_server  = simplib::lookup('simp_options::rsync::server',  { 'default_value' => '127.0.0.1', 'value_type' => String}),
+  $rsync_timeout = simplib::lookup('simp_options::rsync::timeout', { 'default_value' => '2', 'value_type' => String }),
 ){
+  validate_integer($rsync_timeout)
+
   include '::rsync'
 
   package { 'net-snmp-utils': ensure => 'latest' }
@@ -53,6 +55,4 @@ class snmpd::utils (
     preserve_acl => false,
     notify       => Exec['set_snmp_perms']
   }
-
-  validate_integer($rsync_timeout)
 }

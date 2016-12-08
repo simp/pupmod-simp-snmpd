@@ -1,6 +1,6 @@
-client_nets: '1.2.3.4/32'
-rsync::server: 'test.example.domain'
-rsync::timeout: '2'
+simp_options::trusted_nets: [ '1.2.3.4/32' ]
+simp_options::rsync::server: 'test.example.domain'
+simp_options::rsync::timeout: '2'
 snmpd::load::max1: '50'
 snmpd::load::max5: '60'
 snmpd::load::max15: '70'

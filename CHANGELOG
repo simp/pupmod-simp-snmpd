@@ -1,3 +1,6 @@
+* Wed Dec 07 2016 Liz Nemsick <lnemsick.simp@gmail.com> - 6.0.0-0
+- Use simp_options module for global catalysts
+
 * Thu Dec 01 2016 Trevor Vaughan <tvaughan@onyxpoint.com> - 6.0.0-0
 - Updated to use the environment-aware rsync in SIMP 6
 

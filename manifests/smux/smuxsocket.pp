@@ -5,7 +5,7 @@
 # == Parameters
 #
 # [*ipv4_address*]
-# [*allowed_nets*]
+# [*trusted_nets*]
 #
 # == Authors
 #
@@ -13,20 +13,22 @@
 #
 define snmpd::smux::smuxsocket (
   $ipv4_address,
-  $allowed_nets
+  $firewall      = simplib::lookup('simp_options::firewall', { 'default_value' => false, 'value_type' => Boolean }),
+  $trusted_nets  = simplib::lookup('simp_options::trusted_nets', { 'default_value' => ['127.0.0.1', '::1'], 'value_type' => Array[String] })
 ) {
-  include 'snmpd'
+  validate_net_list($trusted_nets)
 
-  validate_net_list($allowed_nets)
+  include '::snmpd'
 
   simpcat_fragment { "snmpd+socket.${name}.smux":
     content => "smuxsocket ${ipv4_address}\n"
   }
 
-  if defined('iptables') and defined(Class['iptables']) {
+  if $firewall {
+    include '::iptables'
     iptables::add_tcp_stateful_listen { "smux_${name}":
-      client_nets => $allowed_nets,
-      dports      => '199'
+      trusted_nets => $trusted_nets,
+      dports       => '199'
     }
   }
 }
